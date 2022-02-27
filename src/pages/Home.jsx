@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchIcon from "../assets/searchIcon.svg";
 import SearchGrey from "../assets/searchGrey.svg";
 import UserIcon from "../assets/userIcon.svg";
@@ -6,8 +6,10 @@ import EmptySide from "../assets/emptySide.svg";
 import PizzaIcon from "../assets/pizza.svg";
 import CupIcon from "../assets/coffee-cup.svg";
 import ProductCard from "../components/productCard";
+import KidCartDetails from "../components/kidCartDetails";
 
 export default function Home() {
+	const [emptyState, setEmptyState] = useState(false);
 	return (
 		<div className="homepage d-flex flex-nowrap">
 			<main className="homepage-mainContent">
@@ -52,6 +54,7 @@ export default function Home() {
 					<ProductCard />
 					<ProductCard />
 					<ProductCard />
+					<ProductCard />
 				</div>
 			</main>
 			<aside className="homepage-sideMenu">
@@ -88,12 +91,25 @@ export default function Home() {
 					</span>
 				</div>
 
-				<div className="aside-placeholder-empty">
-					<div>
-						<img src={EmptySide} alt="" height={80} width={120} />
+				{emptyState ? (
+					<>
+						<div className="aside-placeholder-empty">
+							<div>
+								<img
+									src={EmptySide}
+									alt=""
+									height={80}
+									width={120}
+								/>
+							</div>
+							<p>يجب عليك اختيار طالب اولا</p>
+						</div>
+					</>
+				) : (
+					<div className="aside-placeholder-cart">
+						<KidCartDetails />
 					</div>
-					<p>يجب عليك اختيار طالب اولا</p>
-				</div>
+				)}
 			</aside>
 		</div>
 	);

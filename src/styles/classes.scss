@@ -10,6 +10,9 @@
 .align-items-center {
 	align-items: center;
 }
+.align-items-between {
+	align-items: space-between;
+}
 .align-items-stretch {
 	align-items: stretch;
 }
@@ -31,7 +34,6 @@
 .pointer {
 	cursor: pointer;
 }
-
 .btn {
 	border: none;
 	outline: none;

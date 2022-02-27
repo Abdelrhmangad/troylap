@@ -1,11 +1,14 @@
 .homepage {
 	min-height: 100vh;
+	display: grid;
+	grid-template-areas: "mainContent sideMenu";
+	grid-template-columns: 3fr 1fr;
 	.homepage-mainContent {
+		grid-area: mainContent;
 		width: 100%;
 		min-height: 100vh;
 		padding: 10px;
 		padding-bottom: 30px;
-		min-width: min(70vw, 100%);
 		.filters-icons-btns {
 			align-items: stretch;
 			gap: 10px;
@@ -34,8 +37,14 @@
 		}
 	}
 	.homepage-sideMenu {
+		position: fixed;
+		left: 0%;
+		max-width: 390px;
+		height: 100vh;
+		overflow-y: scroll;
+		scrollbar-gutter: 0;
+		grid-area: sideMenu;
 		background-color: $base-color;
-		min-width: min(30vw, 390px);
 		padding: 10px;
 		display: flex;
 		align-items: center;
@@ -81,6 +90,8 @@
 		}
 
 		.aside-placeholder-empty {
+			margin: 10px;
+			max-width: 90%;
 			height: 100vh;
 			background-color: $base-color;
 			display: flex;
@@ -89,6 +100,12 @@
 			justify-content: center;
 			font-size: 2em;
 			color: rgba(232, 248, 247, 0.5);
+		}
+
+		.aside-placeholder-cart {
+			width: 100%;
+			margin-top: 10px;
+			min-height: 105vh;
 		}
 	}
 }
