@@ -1,0 +1,78 @@
+.product-card {
+	background-color: white;
+	border-radius: 10px;
+	min-width: 250px;
+	min-height: 300px;
+	padding-bottom: 15px;
+	overflow: hidden;
+	position: relative;
+	margin: 10px;
+	.card-header {
+		padding: 8px 8px;
+
+		.product-calories {
+			margin: 0;
+			color: $base-color;
+			font-size: 15px;
+			display: flex;
+			align-items: center;
+			background-color: #e8f8f7;
+			padding: 8px;
+			border-radius: 5px;
+		}
+	}
+
+	.card-details {
+		margin-top: 10px;
+		display: flex;
+		justify-self: center;
+		align-items: center;
+		flex-direction: column;
+
+		.product-image {
+			object-fit: cover;
+		}
+
+		.product-name,
+		.product-stock {
+			margin-top: 10px;
+			color: #363636;
+		}
+		.product-name {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.product-stock {
+			.product-quantity {
+				color: $base-color;
+				font-weight: bold;
+			}
+		}
+
+		.product-price {
+			margin-top: 10px;
+			color: $base-color;
+			font-weight: bold;
+		}
+	}
+	.addToCart-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $base-color;
+		padding: 20px;
+		width: 15px;
+		height: 15px;
+		position: absolute;
+		border-radius: 50%;
+		right: -8px;
+		bottom: -8px;
+		transition: 0.3s ease-in-out;
+		&:hover {
+			bottom: 5px;
+			right: 5px;
+		}
+	}
+}
